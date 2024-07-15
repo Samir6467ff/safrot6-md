@@ -1219,7 +1219,7 @@ await plugin.after.call(this, m, extra)
 console.error(e)
 }}
 if (m.limit) m.reply(`*${+m.limit}* 𝘿𝙞𝙖𝙢𝙖𝙣𝙩𝙚 💎 𝙪𝙨𝙖𝙙𝙤𝙨`)
-if (m.money) m.reply(+m.money + ' 𝙇𝙤𝙡𝙞𝘾𝙤𝙞𝙣𝙨 𝙪𝙨𝙖𝙙𝙤𝙨') 
+if (m.money) m.reply(+m.money + ' 𝙎𝙖𝙛𝙧𝙤𝙩𝘾𝙤𝙞𝙣𝙨 𝙪𝙨𝙖𝙙𝙤𝙨') 
 }
 break
 }}} catch (e) {
@@ -1276,7 +1276,7 @@ if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
 //if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
 	    
-if (!m.fromMem && m.text.match(/(@5492266466080|LoliBot|Botsito|Gata|:v)/gi)) {
+if (!m.fromMem && m.text.match(/(@201115618853|𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿|:v)/gi)) {
 let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}}}
@@ -1383,14 +1383,14 @@ export async function callUpdate(callUpdate) {
     let isAnticall = global.db.data.settings[this.user.jid].antiCall
     if (!isAnticall) return
     for (let nk of callUpdate) {
-    if (nk.isGroup == false) {
-    if (nk.status == "offer") {
-    let callmsg = await this.reply(nk.from, `ʜᴏʟᴀ *@${nk.from.split('@')[0]}*, ʟᴀs ${nk.isVideo ? 'videollamadas' : 'llamadas'} ɴᴏ ᴇsᴛᴀɴ ᴘᴇʀᴍɪᴛɪᴅᴀs, sᴇʀᴀs ʙʟᴏǫᴜᴇᴀᴅᴏ.\n\nsɪ ᴀᴄᴄɪᴅᴇɴᴛᴀʟᴍᴇɴᴛᴇ ʟʟᴀᴍᴀsᴛᴇ ᴘᴏɴɢᴀsᴇ ᴇɴ ᴄᴏɴᴛᴀᴄᴛᴏ ᴄᴏɴ ᴍɪ ᴄʀᴇᴀᴅᴏʀ ᴘᴀʀᴀ ǫᴜᴇ ᴛᴇ ᴅᴇsʙʟᴏǫᴜᴇᴇ!\n\nɢʀᴜᴘᴏ ᴀsɪsᴛᴇɴᴄɪᴀ ғᴀᴄᴇʙᴏᴏᴋ: https://facebook.com/groups/872989990425789/`, false, { mentions: [nk.from] })
-    //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
-    //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-    let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑;;;\nFN:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿\nORG:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nTITLE:\nitem1.TEL;waid=573147616444:+57 314 7616444\nitem1.X-ABLabel:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nX-WA-BIZ-DESCRIPTION:[❗] ᴇsᴄʀɪʙɪ sᴏʟᴏ ᴘᴏʀ ᴄᴏsᴀs ᴅᴇʟ ʙᴏᴛ.\nX-WA-BIZ-NAME:𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑\nEND:VCARD`
-    await this.sendMessage(nk.from, { contacts: { displayName: '𝙇𝙤𝙡𝙞𝘽𝙤𝙩-𝙈𝘿 👑', contacts: [{ vcard }] }}, {quoted: callmsg})
-    await this.updateBlockStatus(nk.from, 'block')
+        if (nk.isGroup == false) {
+            if (nk.status == "offer") {
+                let callmsg = await this.reply(nk.from, `أهلاً *@${nk.from.split('@')[0]}*, ${nk.isVideo ? 'مكالمات الفيديو' : 'المكالمات'} غير مسموح بها، ستتم حظرك.\n\n إذا كنت تتصل بالخطأ، ضع نفسك في اتصال مع مطوري لفك حظرك!\n\nرقم مطوري https://wa.me/+201115618853`, false, { mentions: [nk.from] })
+                //let data = global.owner.filter(([id, isCreator]) => id && isCreator)
+                //await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
+                let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 🦦;;;\nFN:𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 🦦\nORG:𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 👑\nTITLE:\nitem1.TEL;waid=01115618853:+01115618853\nitem1.X-ABLabel:𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 👑\nX-WA-BIZ-DESCRIPTION:[❗] اكتب فقط لأمور البوت.\nX-WA-BIZ-NAME:𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 👑\nEND:VCARD`
+                await this.sendMessage(nk.from, { contacts: { displayName: '𝙎𝙖𝙛𝙧𝙤𝙩-𝙈𝘿 👑', contacts: [{ vcard }] }}, {quoted: callmsg})
+                await this.updateBlockStatus(nk.from, 'block')   
     }
     }
     }
@@ -1414,18 +1414,18 @@ console.error(e)
 
 global.dfail = (type, m, conn, usedPrefix) => {
     let msg = {
-        rowner: '[❗] Este comando solo puede ser utilizado por un admins del grupo',
-        owner: '[❗] Este comando solo puede ser utilizado por un admins del grupo',
-        mods: '[❗] Este comando solo lo usa ShanBot',
-        premium: '[❗] Este comando solo es para usuarios Premium (VIP)',
-        group: '[❗] Este comando es solo para grupos',
-        private: '[❗] Este comando solo. funciona el privado del bot',
-        admin: '[❗] Este comando solo puede ser utilizado por administradores del grupo',
-        botAdmin: '[❗] Este comando solo se puede usar cuando el bot se convierte en administrador',
-        unreg: '「NO ESTAS REGISTRADO」\n\nPA NO APARECES EN MI BASE DE DATOS ✋🥸🤚\n\nPara poder usarme escribe el siguente comando\n\nComando: #reg nombre.edad\nEjemplo: #reg elrebelde.21',
-        restrict: '[ 🔐 ] Este comando esta desactivado por mi jefe'
+        rowner: '[❗] الميزه دي للمطور بس يا حب',
+        owner: '[❗] الميزه دي للمشرفين بس يا حب',
+        mods: '[❗] الميزه دي للمطور بس يا حب',
+        premium: '[❗] االميزه دي للمميزين بس',
+        group: '[❗] الميزه دي للجروبات بس يحب',
+        private: '[❗] االميزه دي برايفت بس تعاله بف',
+        admin: '[❗] الميزه دي للمشرف بس يحب',
+        botAdmin: '[❗] علشان تستخدم الميزه دي ارفع البوت ادمن ي حب',
+        unreg: '「انت مش مسجل」\n\nاانت مش موجود في قاعدة بيناتي🦦\n\nعلشان تسجل في البوت اكتب الامر\n\nده: #اكتب الاسم.ولعمر\nمثال: #reg safrot.21',
+        restrict: '[ 🔐 ] الميزه دي المطور موقفهاا'
     }[type]
-    if (msg) return conn.sendMessage(m.chat, {text: msg,  contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `ℹ️𝐈𝐍𝐅𝐎 ℹ️`, body: wm, previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })
+    if (msg) return conn.sendMessage(m.chat, {text: msg,  contextInfo: {externalAdReply : {mediaUrl: null, mediaType: 1, description: null, "title": `ₛₐfᵣₒₜ bₒₜ`, body: wm, previewType: 0, "thumbnail": img.getRandom(), sourceUrl: [nna, md, yt, nn, tiktok].getRandom()}}}, { quoted: m })
 }
 
 const file = global.__filename(import.meta.url, true);
