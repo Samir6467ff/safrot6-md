@@ -41,7 +41,7 @@ await conn.reply(m.chat,  `*[ ✅ تسجيل تم ]*
 
 ◉ *الاسم:* ${name}
 ◉ *السن:* ${age} سنة
-◉ *الوقت:* ${time} 🇦🇷
+◉ *الوقت:* ${time} ⌚
 ◉ *التاريخ:* ${date}
 ◉ *الدولة:* ${userNationality}
 ◉ *رقم التليفون:* wa.me/${who.split`@`[0]}
@@ -65,7 +65,7 @@ let sn = createHash('md5').update(m.sender).digest('hex')
 conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `⬇️ *ده رقم السيريال بتاعك* ⬇️`, 'status@broadcast')
 }
 
-if (command == 'unreg') {
+if (command == 'safrot') {
 if (!args[0]) throw `✳️ *ادخل رقم السيريال*\nتقدر تشوف رقم السيريال بتاعك باستخدام الأمر...\n\n*${usedPrefix}nserie*`
 let user = global.db.data.users[m.sender]
 let sn = createHash('md5').update(m.sender).digest('hex')
@@ -77,7 +77,7 @@ global.db.data.users[m.sender].joincount -= 2
 user.registered = false
 m.reply(`✅ *التسجيل تم حذفه*`)
 }}
-handler.help = ['reg', 'verificar', 'myns', 'nserie', 'unreg']
+handler.help = ['reg', 'verificar', 'myns', 'nserie', 'safrot']
 handler.tags = ['rg']
-handler.command = /^(nserie|unreg|sn|myns|verify|verificar|registrar|reg(ister)?)$/i
+handler.command = /^(nserie|safrot|sn|myns|verify|verificar|registrar|reg(ister)?)$/i
 export default handler
