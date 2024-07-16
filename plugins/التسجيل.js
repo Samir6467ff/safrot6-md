@@ -18,15 +18,15 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let name2 = conn.getName(m.sender)
 
 if (command == 'verify' || command == 'reg' || command == 'verificar') {
-if (user.registered === true) throw `*Ya esta registrados 🤨*`
-if (!Reg.test(text)) throw `*⚠️¿No saber como usar este comando?* usar de la siguiente manera: *${usedPrefix + command} nombre.edad*\n*• Ejemplo:* ${usedPrefix + command} ${name2}.16`
+if (user.registered === true) throw `*انت مسجل بالفعل 🤨*`
+if (!Reg.test(text)) throw `*⚠️ مش عارف تستخدم الأمر ده؟* استخدمه بالشكل ده: *${usedPrefix + command} الاسم.السن*\n*• مثال:* ${usedPrefix + command} ${name2}.16`
 let [_, name, splitter, age] = text.match(Reg)
-if (!name) throw '*¿Y el nombre?*'
-if (!age) throw '*la edad no puede esta vacia, agregar la edad pendejo*'
-if (name.length >= 45) throw '*Que?, tan largo van ser tu nombre 🤓*, no me imagino la de abajo 🤣' 
+if (!name) throw '*فين الاسم؟*'
+if (!age) throw '*السن مينفعش يبقى فاضي، ضيف السن يا ذكي*'
+if (name.length >= 45) throw '*ايه؟ اسمك طويل كده 🤓*، مش متخيل اللي تحت 🤣' 
 age = parseInt(age)
-if (age > 100) throw '👴🏻 Pa esta viejos'
-if (age < 5) throw '🚼  Vrg los bebes saben escribir? ✍️😳 '
+if (age > 100) throw '👴🏻 كبير قوي'
+if (age < 5) throw '🚼 الأطفال بقى بيعرفوا يكتبوا؟ ✍️😳 '
 user.name = name.trim()
 user.age = age
 user.regTime = + new Date
@@ -37,45 +37,45 @@ global.db.data.users[m.sender].exp += 150
 global.db.data.users[m.sender].joincount += 2
 let sn = createHash('md5').update(m.sender).digest('hex')
 
-await conn.reply(m.chat,  `[ ✅ REGISTRO COMPLETADO ]
+await conn.reply(m.chat,  `*[ ✅ تسجيل تم ]*
 
-◉ *Nombre:* ${name}
-◉ *Edad:* ${age} años
-◉ *Hora:* ${time} 🇦🇷
-◉ *Fecha:* ${date}
-◉ *Pais:* ${userNationality}
-◉ *Número:* wa.me/${who.split`@`[0]}
-◉ *Numero del serie*
+◉ *الاسم:* ${name}
+◉ *السن:* ${age} سنة
+◉ *الوقت:* ${time} 🇦🇷
+◉ *التاريخ:* ${date}
+◉ *الدولة:* ${userNationality}
+◉ *رقم التليفون:* wa.me/${who.split`@`[0]}
+◉ *رقم السيريال*
 ⤷ ${sn}
 
-🎁 *Recompensa:*
-⤷ 2 diamante 💎
-⤷ 400 Coins 🪙
-⤷ 150 exp
+🎁 *المكافأة:*
+⤷ 2 ألماسة 💎
+⤷ 400 كوينز 🪙
+⤷ 150 نقاط خبرة
 
-*◉ Para ver los comandos del bot usar:*
+*◉ عشان تشوف أوامر البوت استخدم:*
 ${usedPrefix}menu
 
-◉ *Total de usuários registrados:* ${rtotalreg}`, m, {contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: `𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎`, body: '', previewType: 0, thumbnail: img.getRandom(), sourceUrl: [nna, nn, md, yt, tiktok].getRandom()}}})
+*◉ إجمالي المستخدمين المسجلين:* ${rtotalreg}`, m, {contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, title: `𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎`, body: '', previewType: 0, thumbnail: img.getRandom(), sourceUrl: [nna, nn, md, yt, tiktok].getRandom()}}})
 await m.reply(`${sn}`)
 }
 
 if (command == 'nserie' || command == 'myns' || command == 'sn') {
 let sn = createHash('md5').update(m.sender).digest('hex')
-conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `⬇️ ᴇsᴛᴇ ᴇs sᴜs ɴᴜᴍᴇʀᴏ ᴅᴇʟ sᴇʀɪᴇ ⬇️`, 'status@broadcast')
+conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `⬇️ *ده رقم السيريال بتاعك* ⬇️`, 'status@broadcast')
 }
 
 if (command == 'unreg') {
-if (!args[0]) throw `✳️ *Ingrese número de serie*\nVerifique su número de serie con el comando...\n\n*${usedPrefix}nserie*`
+if (!args[0]) throw `✳️ *ادخل رقم السيريال*\nتقدر تشوف رقم السيريال بتاعك باستخدام الأمر...\n\n*${usedPrefix}nserie*`
 let user = global.db.data.users[m.sender]
 let sn = createHash('md5').update(m.sender).digest('hex')
-if (args[0] !== sn) throw '⚠️ *Número de serie incorrecto*'
+if (args[0] !== sn) throw '⚠️ *رقم السيريال غلط*'
 global.db.data.users[m.sender].money -= 400
 global.db.data.users[m.sender].limit -= 2
 global.db.data.users[m.sender].exp -= 150
 global.db.data.users[m.sender].joincount -= 2  
 user.registered = false
-m.reply(`✅ ᴿᵉᵍᶦˢᵗʳᵒ ᵉˡᶦᵐᶦⁿᵃᵈᵒ`)
+m.reply(`✅ *التسجيل تم حذفه*`)
 }}
 handler.help = ['reg', 'verificar', 'myns', 'nserie', 'unreg']
 handler.tags = ['rg']
